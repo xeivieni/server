@@ -1,22 +1,7 @@
 
-.idea/dataSources.local.xml
-
-.idea/dataSources.xml
-
-.idea/encodings.xml
-
-.idea/misc.xml
-
-db.sqlite3
-
-.idea/workspace.xml
-
-.idea/server.iml
-
-.idea/modules.xml
-
-.idea/dataSources.ids
-
-.idea/.name
+.idea/*
 
 *.pyc
+
+
+db.sqlite3
