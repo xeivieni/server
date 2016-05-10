@@ -43,10 +43,10 @@ class UserViewSet(viewsets.ModelViewSet):
 class ControlsViewSet(viewsets.ModelViewSet):
     queryset = Controls.objects.all()
     serializer_class = ControlsSerializer
-    
+
     # TODO Call the right function to move the wheels
     def create(self, request, *args, **kwargs):
-        print request
+        print request.data
         return Response(status=200)
 
 # Routers provide an easy way of automatically determining the URL conf.
