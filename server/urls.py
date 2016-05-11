@@ -55,8 +55,8 @@ router.register(r'users', UserViewSet)
 router.register(r'controls', ControlsViewSet)
 
 urlpatterns = [
-    url(r'^sphr/', include('sphr_server.urls')),
+    url(r'^', include('sphr_server.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^', include(router.urls)),
+    url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
