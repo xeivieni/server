@@ -5,3 +5,5 @@
 
 
 db.sqlite3
+
+sphr_server/migrations/*
