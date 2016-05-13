@@ -6,12 +6,6 @@ images_path = abspath(join(dirname(__file__), "static", "website", "images"))
 photos_path = abspath(join(dirname(__file__), "static", "website", "photos"))
 
 
-# Create your models here.
-class Controls(models.Model):
-    x_direction = models.FloatField()
-    y_direction = models.FloatField()
-
-
 class Team(models.Model):
     name = models.TextField(default="team member name")
     surname = models.TextField(default="team member surname")
