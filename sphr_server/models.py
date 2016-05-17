@@ -1,9 +1,9 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from os.path import dirname, join, abspath
-images_path = abspath(join(dirname(__file__), "static", "website", "images"))
-photos_path = abspath(join(dirname(__file__), "static", "website", "photos"))
+from os.path import dirname, join, abspath, relpath
+images_path = relpath(abspath(join(dirname(__file__), "static", "website", "images")), dirname(__file__))
+photos_path = relpath(abspath(join(dirname(__file__), "static", "website", "photos")), dirname(__file__))
 
 
 class Team(models.Model):
