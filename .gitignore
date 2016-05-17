@@ -5,5 +5,5 @@
 
 
 db.sqlite3
-
+server/uwsgi_params
 sphr_server/migrations/*

@@ -70,61 +70,20 @@
 <div class="container marketing">
     <!-- Three columns of text below the carousel -->
     <div class="row">
-        <div class="col-lg-6" align="center">
-            <img class="img-circle" src="../../static/website/photos/clement.jpg" alt="Generic placeholder image"
-                 width="140" height="140" align="center">
-            <h2>Clément Mondion</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies
-                vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
-                cursus magna.</p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-6" align="center">
-            <img class="img-circle" src="../../static/website/photos/herve.jpg" alt="Generic placeholder image"
-                 width="140" height="140" align="center">
-            <h2>Hervé Yildirim</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies
-                vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
-                cursus magna.</p>
-        </div><!-- /.col-lg-4 -->
-    </div>
-    <br><br>
-    <div class="row">
-        <div class="col-lg-6" align="center">
-            <img class="img-circle" src="../../static/website/photos/thib.jpg" alt="Generic placeholder image"
-                 width="140" height="140" align="center">
-            <h2>Thibaud Hulot</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies
-                vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
-                cursus magna.</p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-6" align="center">
-            <img class="img-circle" src="../../static/website/photos/jo.jpg" alt="Generic placeholder image" width="140"
-                 height="140" align="center">
-            <h2>Jonathan Quié</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies
-                vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
-                cursus magna.</p>
-        </div><!-- /.col-lg-4 -->
-    </div>
-    <br><br>
-    <div class="row">
-        <div class="col-lg-6" align="center">
-            <img class="img-circle" src="../../static/website/photos/mehdi.jpg" alt="Generic placeholder image"
-                 width="140" height="140" align="center">
-            <h2>Mehdi Merouane</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies
-                vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
-                cursus magna.</p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-6" align="center">
-            <img class="img-circle"
-                 src="../../static/website/photos/nawal.jpg"
-                 alt="Generic placeholder image" width="140" height="140" align="center">
-            <h2>Nawal El Bannay</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies
-                vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
-                cursus magna.</p>
-        </div><!-- /.col-lg-4 -->
+        {% for member in object_list %}
+            <div class="col-lg-6" align="center">
+                <img class="img-circle" src="{{ member.picture }}" alt="Generic placeholder image"
+                width="140" height="140" align="center">
+                <h2>{{ member.name }} {{ member.surname }}</h2>
+                <p>{{ member.description }}</p>
+            {% if not forloop.counter0|divisibleby:2 %}
+                </div>
+                <br><br>
+                <div class="row">
+            {% endif %}
+            </div>
+
+        {% endfor %}
     </div>
 
     <br>
